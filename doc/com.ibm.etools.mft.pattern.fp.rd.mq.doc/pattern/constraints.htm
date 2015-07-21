@@ -29,27 +29,23 @@ All Rights Reserved * Licensed Materials - Property of IBM
 <span>Record Distribution to WebSphere MQ: one-way</span> pattern only if you meet all the following 
 constraints:</p>
 <ul>
-	<li>It must be possible to read the input file as records.
-	You can process files that contain fixed length records, variable length
-	records separated by a well-known delimiter, or variable length records that
-	can be extracted by a parser, a technique referred to as 
+	<li><b>It must be possible to read the input file as comprising a number of individual records.</b><br/>
+	Files can be processed if they contain fixed-length records, variable-length
+	records that are separated by a well-known delimiter, or variable-length records that
+	can be extracted by a parser; a technique referred to as 
 	<span class="mftobjpropval">Parsed Record Sequence</span>. 
-	This technique can be used to read a file
-	that contains multiple XML documents, returning each document as a record.
-	You cannot use this pattern to extract embedded records, 
-	for example, records within a single XML document.</li>
-	<li>If a remote file is processed by the FTP service, 
-	the broker must be permitted to delete the source file 
-	because source files are moved to the broker and are not read in place.</li>
-	<li>The business function for which the pattern instance is used 
-	must be compatible with the redistribution of records after a system failure. 
-	This pattern distributes the records reliably, 
-	but does not guard against duplicates after a system failure.</li>
-	<li>The business function, for which the pattern instance is used, 
-	must be compatible with the redistribution of records after failure
-	to read a record from the file or to write a record that has been read.
-	In this case, this pattern moves the whole file to the backout directory and an error is written to the
-	error queue. You must arrange for the file to be resubmitted after the error has been corrected.
+	You can use this technique to read a file
+	that contains multiple XML documents, and return each document as a record.
+	You cannot use this pattern to extract embedded records; 
+	for example, records within a single XML document.</li><br/>
+	<li><b>The integration node must be able to delete the source file.</b><br/>
+	Source files are removed from their original location and moved to the integration node; they are not read in place.</li><br/>
+	<li><b>The business function must be compatible with the redistribution of records after a system failure.</b><br/>
+	This pattern distributes the records reliably, but does not guard against duplicate records after a system failure.</li><br/>
+	<li><b>The business function must be compatible with the redistribution of records after a failure
+	to read a record from the file, or to route a record to a destination.</b><br/>
+	In this case, the whole file is moved to the backout directory and an error is written to the
+	error queue. You must arrange for the file to be resubmitted after the error is corrected.
 	When a file is resubmitted, all the records in the file are reprocessed, which may lead to duplicate 
 	messages.</li>
 	<li>If logging is required, the format that is used by this pattern is assumed 

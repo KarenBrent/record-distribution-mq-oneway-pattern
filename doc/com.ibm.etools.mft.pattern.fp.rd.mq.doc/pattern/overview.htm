@@ -24,22 +24,22 @@ All Rights Reserved * Licensed Materials - Property of IBM
 <h1 class="topictitle1"><span>Record Distribution to WebSphere MQ: one-way</span> pattern</h1>
 <div>
 	<p class="shortdesc">Use the <span>Record Distribution to WebSphere MQ: one-way</span> 
-	pattern to bridge file based and transaction based styles of integration. </p>
+	pattern to bridge file-based and transaction-based styles of integration. </p>
 	
-	<p> Use this pattern when:</p>
+	<p> Use this pattern in the following situations:</p>
 <ul>
 <li>You have batches of transactions that are received as files from local or remote systems.</li>
-<li>Your transactions cannot be sent as individual transactions because of:
+<li>Your transactions cannot be sent as individual transactions. For example:
 <ul>
-<li>the technical limitations of source systems that support file based integration capabilities only.</li> 
-<li>the business requirements that mandate batching, for example, the collection of all transactions 
+<li>The source systems support file based integration capabilities only.</li> 
+<li>The business requirements mandate that transactions are batched; for example, the collection of all transactions 
 within a working day.</li>
-<li>conformance to existing working practices, for example, the use of files that contain EDI transactions.</li>
+<li>You must conform to existing working practices; for example, you must use files that contain EDI transactions.</li>
 </ul></li>
 <li>Your target systems are designed to accept individual transactions. Such systems might take input from 
-near real-time systems and from batch files and therefore present a transactional interface.</li>	
-<li>You have batch files containing transactions that must be distributed to one or more systems.</li>
-<li>The records must be processed, but any failures can be handled by reprocessing the entire file.</li>
+near real-time systems and from batch files, and therefore present a transactional interface.</li>	
+<li>You have batch files that contain transactions that must be distributed to one or more systems.</li>
+<li>If any failures occur, it is acceptable for the entire file to be reprocessed.</li>
 </ul>
 </div>
 

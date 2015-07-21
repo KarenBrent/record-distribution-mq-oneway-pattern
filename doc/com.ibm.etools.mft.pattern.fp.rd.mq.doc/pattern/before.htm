@@ -17,35 +17,25 @@ All Rights Reserved * Licensed Materials - Property of IBM
 	<!-- GSA ADP Schedule Contract with IBM Corp. -->
 	<link rel="stylesheet" type="text/css" href="../css/ibmdita.css" />
 	<link rel="stylesheet" type="text/css" href="../css/bip4.css" />
-	<title>Tasks to complete before applying the Record Distribution to WebSphere MQ: one-way pattern</title>
+	<title>Tasks to complete before you generate the Record Distribution to WebSphere MQ: one-way pattern</title>
 	<script language="JavaScript" src="../help/LiveHelp.js" type="text/javascript"></script>
 </head>
 <body id="com.ibm.etools.mft.pattern.fp.rd.mq.before">
-	<h1 class="topictitle1">Tasks to complete before applying the 
+	<h1 class="topictitle1">Tasks to complete before you generate the 
 	<span>Record Distribution to WebSphere MQ: one-way</span> pattern</h1>
-	<p class="shortdesc">Before applying the pattern to produce a pattern instance, you must determine
-which of the following tasks are required. If required, complete the following tasks:</p>
+	<p class="shortdesc">Before you generate a pattern instance, you must complete the following tasks:</p>
 
 <ul>
-<li>Identify that this pattern meets the business requirements and 
-can be supported by both file creators and message consumers.</li>
-<li>Name the pattern instance. 
-Identify the purpose of the pattern application so that you can decide on an 
-appropriate name.</li>
-<li>Decide whether you require logging. 
-If logging is required, you must decide to which queue manager and 
-queue the logging messages are sent. Logging might be to a general log queue, 
-which already exists 
-for other broker flows or to a queue that is created for the pattern instance.</li>
-<li>Decide whether you require error messages. 
-If error messages are required, you must decide to which queue manager and 
-queue the error messages are sent.</li>
-<li>Decide how records are detected and, if required, 
-prepare a message set to define how records are parsed. </li>
-<li>Decide if validation is required and, if required,
-prepare a message set to define how records are parsed.</li>
-<li>Determine whether the files that are to be processed are local or remote. 
-If remote files are to be processed, the name of the configurable service must be identified.</li>
+<li>Confirm that this pattern meets the business requirements and 
+can be supported by both the system that creates the files and the systems to which the files are sent.</li>
+<li>Identify the purpose of the pattern application and give the pattern instance an appropriate name.</li>
+<li>If logging is required, decide which queue manager and 
+queue will receive the logging messages.</li>
+<li>Decide how records are detected and if validation is required. If necessary, 
+prepare a message model to define how records are parsed. </li>
+<li>Determine whether the files that are to be processed are local or remote. If remote files are to
+be processed, identify the name of the FtpServer configurable service. For more information, search for "FtpServer configurable service" in the 
+IBM Integration Bus documentation.</li>
 <li>Decide if multiple possible destinations exist. If multiple possible destinations exist, 
 select the routing approach to use.
 	<ul>
